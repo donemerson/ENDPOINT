@@ -20,23 +20,60 @@
 
 ## Documentação
 
-#### LOGIN
+### LOGIN
 >   
 >  
-> ## Body
+> #### Body
 > ~~~javascript
 > {
 >	"email": "example@domain.com",
 >	"password": "YOUR_SECRET_PASSWORD"
 >}
 > ~~~
-> ## Header
+> #### Header
 > 
 > |KEY|VALUE|
 >| :---:|:--:|
 >|Content-Type|application/json|
 > 
-> ## Response successful
+> #### Response successful
+> ~~~javascript
+>{
+>    "token": {
+>        "type": "bearer",
+>        "token": "YOUR_GENERATE_TOKEN",
+>        "refreshToken": null
+>  },
+>   "user": {
+>       "username": "YOUR_USERNAME",
+>       "email": "example@domain.com",
+>       "praca_id": null,
+>       "profile_id": YOUR_PROFILE_ID,
+>       "id": YOUR_ID,
+>       "praca": null
+>    }
+>}
+>~~~
+>## 
+> ## 
+> 
+### LIGAR SORTEIO
+>   
+>  
+> #### Body
+> ~~~javascript
+> {
+>	"email": "example@domain.com",
+>	"password": "YOUR_SECRET_PASSWORD"
+>}
+> ~~~
+> #### Header
+> 
+> |KEY|VALUE|
+>| :---:|:--:|
+>|Content-Type|application/json|
+> 
+> #### Response successful
 > ~~~javascript
 >{
 >    "token": {
