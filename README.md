@@ -11,13 +11,13 @@
 
 > Resumo de nossos end points
 > 
-|      NOME       | METHOD |                URL                |       BODY        |      HEADER       |     RESPONSE      |
-| :-------------: | :----: | :-------------------------------: | :---------------: | :---------------: | :---------------: |
-|      LOGIN      |  POST  |      ``{{URL}}/sessions?=``       | [EXEMPLO](#login) | [EXEMPLO](#login) | [EXEMPLO](#login) |
-|  LIGAR SORTEIO  |  GET   |  ``{{URL}}/sorteio/DEMO/ligar``   |    [EXEMPLO]()    |    [EXEMPLO]()    |    [EXEMPLO]()    |
-|  MARCAR NUMERO  |  POST  |  ``{{URL}}/sorteio/DEMO/marcar``  |    [EXEMPLO]()    |    [EXEMPLO]()    |    [EXEMPLO]()    |
-| ENCERRAR PRÊMIO |  GET   | ``{{URL}}/sorteio/DEMO/encerrar`` |    [EXEMPLO]()    |    [EXEMPLO]()    |    [EXEMPLO]()    |
-
+|      NOME       | METHOD |                URL                |              BODY              |             HEADER             |            RESPONSE            |
+| :-------------: | :----: | :-------------------------------: | :----------------------------: | :----------------------------: | :----------------------------: |
+|      LOGIN      |  POST  |      ``{{URL}}/sessions?=``       |       [EXEMPLO](#login)        |       [EXEMPLO](#login)        |       [EXEMPLO](#login)        |
+|  LIGAR SORTEIO  |  GET   |  ``{{URL}}/sorteio/DEMO/ligar``   |   [EXEMPLO](#ligar-sorteio)    |   [EXEMPLO](#ligar-sorteio)    |   [EXEMPLO](#ligar-sorteio)    |
+|  MARCAR NUMERO  |  POST  |  ``{{URL}}/sorteio/DEMO/marcar``  | [EXEMPLO](#marcar-n%c3%9amero) | [EXEMPLO](#marcar-n%c3%9amero) | [EXEMPLO](#marcar-n%c3%9amero) |
+| ENCERRAR PRÊMIO |  GET   | ``{{URL}}/sorteio/DEMO/encerrar`` |  [EXEMPLO](#encerrar-sorteio)  |  [EXEMPLO](#encerrar-sorteio)  |  [EXEMPLO](#encerrar-sorteio)  |
+> ? ? ? TERÁ QUE FAZER UM REQUEST PARA CADA PRAÇA PARTICIPANTE DO SORTEIO ? ? ? ? ? ? 
 ## Documentação
 
 ### LOGIN
@@ -62,9 +62,31 @@
 >  
 > #### Body
 > ~~~javascript
-> {
->	"email": "example@domain.com",
->	"password": "YOUR_SECRET_PASSWORD"
+>empty
+> ~~~
+> #### Header
+> 
+> |KEY|VALUE|
+>| :---:|:--:|
+>|Content-Type|application/json|
+>|Authorization |Bearer YOUR_GENERATE_TOKEN|
+> 
+> #### Response successful
+> ~~~javascript
+>{
+>   "success": true // or false
+>}
+>~~~
+>## 
+>## 
+
+### MARCAR NÚMERO
+>   
+>  
+> #### Body
+> ~~~javascript
+>{
+>	"numero": "YOUR_NUMBER"
 >}
 > ~~~
 > #### Header
@@ -72,27 +94,40 @@
 > |KEY|VALUE|
 >| :---:|:--:|
 >|Content-Type|application/json|
+>|Authorization |Bearer YOUR_GENERATE_TOKEN|
 > 
 > #### Response successful
 > ~~~javascript
 >{
->    "token": {
->        "type": "bearer",
->        "token": "YOUR_GENERATE_TOKEN",
->        "refreshToken": null
->  },
->   "user": {
->       "username": "YOUR_USERNAME",
->       "email": "example@domain.com",
->       "praca_id": null,
->       "profile_id": YOUR_PROFILE_ID,
->       "id": YOUR_ID,
->       "praca": null
->    }
+>   "success": true // or false
 >}
 >~~~
 >## 
-> ## 
+>## 
+
+### ENCERRAR SORTEIO
+>   
+>  
+> #### Body
+> ~~~javascript
+>empty
+> ~~~
+> #### Header
+> 
+> |KEY|VALUE|
+>| :---:|:--:|
+>|Content-Type|application/json|
+>|Authorization |Bearer YOUR_GENERATE_TOKEN|
+> 
+> #### Response successful
+> ~~~javascript
+>{
+>   "success": true // or false
+>}
+>~~~
+>## 
+>## 
+
 
 ## Postman
 > Caso você utilize postman, veja como importar nossa collection
